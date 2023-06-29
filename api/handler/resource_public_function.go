@@ -500,7 +500,7 @@ func (c *clusterAction) PodTemplateSpecResource(parameter model.YamlResourcePara
 		ComponentsName:                   parameter.Name,
 		BasicManagement:                  parameter.Basic,
 		PortManagement:                   ps,
-		ENVManagement:                    envs,
+		// ENVManagement:                    envs,
 		ConfigManagement:                 configs,
 		TelescopicManagement:             t,
 		HealthyCheckManagement:           hcm,
