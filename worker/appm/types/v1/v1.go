@@ -155,7 +155,7 @@ func (a *AppServiceBase) SetDiscoveryCfg(discoveryCfg *dbmodel.ThirdPartySvcDisc
 
 // GetK8sWorkloadName -
 func (a *AppServiceBase) GetK8sWorkloadName() string {
-	return fmt.Sprintf("%s-%s", a.K8sApp, a.K8sComponentName)
+	return fmt.Sprintf("%s", a.K8sComponentName)
 }
 
 //OperatorManaged -
