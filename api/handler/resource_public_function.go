@@ -56,17 +56,17 @@ func (c *clusterAction) PodTemplateSpecResource(parameter model.YamlResourcePara
 	}
 
 	//ENV
-	var envs []model.ENVManagement
-	for i := 0; i < len(parameter.Template.Spec.Containers[0].Env); i++ {
-		if cm := parameter.Template.Spec.Containers[0].Env[i].ValueFrom; cm == nil {
-			envs = append(envs, model.ENVManagement{
-				ENVKey:     parameter.Template.Spec.Containers[0].Env[i].Name,
-				ENVValue:   parameter.Template.Spec.Containers[0].Env[i].Value,
-				ENVExplain: "",
-			})
-			parameter.Template.Spec.Containers[0].Env = append(parameter.Template.Spec.Containers[0].Env[:i], parameter.Template.Spec.Containers[0].Env[i+1:]...)
-		}
-	}
+	// var envs []model.ENVManagement
+	// for i := 0; i < len(parameter.Template.Spec.Containers[0].Env); i++ {
+	// 	if cm := parameter.Template.Spec.Containers[0].Env[i].ValueFrom; cm == nil {
+	// 		envs = append(envs, model.ENVManagement{
+	// 			ENVKey:     parameter.Template.Spec.Containers[0].Env[i].Name,
+	// 			ENVValue:   parameter.Template.Spec.Containers[0].Env[i].Value,
+	// 			ENVExplain: "",
+	// 		})
+	// 		parameter.Template.Spec.Containers[0].Env = append(parameter.Template.Spec.Containers[0].Env[:i], parameter.Template.Spec.Containers[0].Env[i+1:]...)
+	// 	}
+	// }
 
 	//Configs
 	var configs []model.ConfigManagement
