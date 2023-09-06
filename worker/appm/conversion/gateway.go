@@ -478,7 +478,7 @@ func (a *AppServiceBuild) createOuterService(port *model.TenantServicesPort) *co
 
 func (a *AppServiceBuild) createStatefulService(ports []*model.TenantServicesPort) *corev1.Service {
 	var service corev1.Service
-	service.Name = a.appService.GetK8sWorkloadName()
+	service.Name = a.appService.GetK8sWorkloadName() + "-headless"
 	service.Namespace = a.appService.GetNamespace()
 	service.Labels = a.appService.GetCommonLabels(map[string]string{
 		"service_type": "stateful",
